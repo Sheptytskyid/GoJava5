@@ -1,9 +1,12 @@
 package module1.homework.task1;
 
-class FirstClass {
-
+/**
+ * Class FirstClass prints a single line of text
+ *
+ * @author Denys Sheptytskyi
+ */
+public class FirstClass {
     public static void main(String[] args) {
-
         System.out.println("Мій перший метод на java");
     }
 }
