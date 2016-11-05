@@ -1,7 +1,3 @@
-/*
- * Created by Denys Sheptytskyi
- */
-
 package module2.homework.task2_1;
 
 /**
