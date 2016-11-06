@@ -10,7 +10,7 @@ public class Bank {
     private double balance;
     private String clientName;
 
-    Bank(String n, double b) {
+    public Bank(String n, double b) {
         clientName = n;
         balance = b;
     }
@@ -19,7 +19,7 @@ public class Bank {
      * checks if the account balance is sufficient to make a withdrawal + 5% fee
      * prints client's name, OK + amount of fee + balance after withdrawal in case of success and NO in case of failure
      *
-     * @param withdrawal
+     * @param "double withdrawal"
      */
     void withdraw(double withdrawal) {
         System.out.println(clientName);
