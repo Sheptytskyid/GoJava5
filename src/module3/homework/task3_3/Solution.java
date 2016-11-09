@@ -30,5 +30,6 @@ public class Solution {
         System.out.println("Sheptytskyi's group is: " + Sheptytskyid.getGroup());
         BhattA.setEmail("BhattA@gmail.com");
         System.out.println("Bhatt's email is: " + BhattA.getEmail());
+        System.out.println("Java 1 course start date is: " + Java1.getStartDate());
     }
 }
