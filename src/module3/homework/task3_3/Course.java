@@ -9,7 +9,6 @@ public class Course {
     private String teacherName;
     private int hoursDuration;
 
-
     public Course(Date startDate, String name) {
         this.startDate = startDate;
         this.name = name;
@@ -21,7 +20,6 @@ public class Course {
         this.name = name;
         this.teacherName = teacherName;
     }
-
 
     public Date getStartDate() {
         return startDate;

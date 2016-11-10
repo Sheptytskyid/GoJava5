@@ -19,7 +19,6 @@ public class SpecialStudent extends CollegeStudent {
         this.secretKey = secretKey;
     }
 
-
     public long getSecretKey() {
         return secretKey;
     }
