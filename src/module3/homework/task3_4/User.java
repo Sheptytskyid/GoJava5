@@ -18,7 +18,6 @@ public class User {
         this.salary = salary;
     }
 
-
     public int getSalary() {
         return salary;
     }
@@ -67,10 +66,8 @@ public class User {
         this.salary = salary;
     }
 
-
     public void paySalary() {
-        int newBalance = getBalance() + getSalary();
-        setBalance(newBalance);
+        this.balance += this.salary;
     }
 
     public void withdraw(int summ) {
@@ -80,21 +77,18 @@ public class User {
             summ *= 1.1;
         }
 
-        if (getBalance() >= summ) {
-            int newBalance = getBalance() - summ;
-            setBalance(newBalance);
+        if (this.balance >= summ) {
+            this.balance -= summ;
         } else {
             System.out.println("Withdrawal failed!\nInsufficient funds!");
         }
     }
 
-
     int companyNameLength() {
-        return getCompanyName().length();
+        return this.companyName.length();
     }
 
     void monthIncreaser(int addMonth) {
-        int newMonthsOfEmployment = getMonthsOfEmployment() + addMonth;
-        setMonthsOfEmployment(newMonthsOfEmployment);
+        this.monthsOfEmployment += addMonth;
     }
 }
