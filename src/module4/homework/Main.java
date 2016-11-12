@@ -29,15 +29,15 @@ public class Main {
             int transferAmount = 1000;
             int withdrawAmount = 2000;
             System.out.println("Performing operations with user " + user.getName());
-            System.out.println("Funding " + fundingAmount);
+            System.out.println("Funding " + user.getBank().getCurrency() + " " + fundingAmount);
             system1.fundUser(user, fundingAmount);
-            System.out.println("Transferring " + transferAmount);
+            System.out.println("Transferring " + user.getBank().getCurrency() + " " + transferAmount);
             system1.transferMoney(user, users[4], transferAmount);
-            System.out.println("Paying Salary " + user.getSalary());
+            System.out.println("Paying Salary " + user.getBank().getCurrency() + " " + user.getSalary());
             system1.paySalary(user);
-            System.out.println("Withdrawing " + withdrawAmount);
+            System.out.println("Withdrawing " + user.getBank().getCurrency() + " " + withdrawAmount);
             system1.withdrawOfUser(user, withdrawAmount);
-            System.out.println("Balance: " + user.getBalance());
+            System.out.println("Balance: " + user.getBank().getCurrency() + " " + user.getBalance());
             System.out.println("\n");
         }
     }

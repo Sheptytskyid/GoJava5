@@ -23,9 +23,9 @@ public class User {
 
     @Override
     public String toString() {
-        String objectInfo = "ID: " + this.id + "\nName: " + this.name + "\nBalance: " + this.balance
-                + "\nMonths of employment: " + this.monthsOfEmployment + "\nCompany name: " + this.companyName
-                + "\nSalary: " + this.salary;
+        String objectInfo = "ID: " + this.id + "\nName: " + this.name + "\nBalance: " + this.bank.getCurrency()
+                + " " + this.balance + "\nMonths of employment: " + this.monthsOfEmployment + "\nCompany name: "
+                + this.companyName + "\nSalary: " + this.bank.getCurrency() + " " + this.salary;
         return objectInfo;
     }
 
