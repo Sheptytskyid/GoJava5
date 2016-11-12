@@ -7,7 +7,6 @@ public class UserDemo {
     public static void main(String[] args) {
         User Sheptytskyid = new User("Denys Sheptytskyi", "OTP Capital", "UAH", 1_000, 8 * 12 + 10, 100);
 
-
         Sheptytskyid.setCompanyName("LLC \"AMC \"OTP Capital\"");
 
 
