@@ -4,7 +4,7 @@ public class BankSystemImpl implements BankSystem {
 
     @Override
     public void withdrawOfUser(User user, int amount) {
-        double totalAmount = amount * (1 + user.getBank().getCommission(amount) / 100);
+        double totalAmount = amount + user.getBank().getCommission(amount);
 
         if (totalAmount >= user.getBank().getLimitOfWithdrawal()) {
             System.out.println("Withdrawal error: Limit exceeded!");
@@ -14,9 +14,7 @@ public class BankSystemImpl implements BankSystem {
             System.out.println("Withdrawal error: insufficient funds!");
             return;
         }
-
-        double newBalance = user.getBalance() - totalAmount;
-        user.setBalance(newBalance);
+        user.setBalance(user.getBalance() - totalAmount);
         System.out.println("Success");
     }
 
@@ -26,17 +24,15 @@ public class BankSystemImpl implements BankSystem {
             System.out.println("Funding error! " + user.getName() + ": Funding limit exceeded!");
             return;
         }
-
-        double newBalance = user.getBalance() + amount;
-        user.setBalance(newBalance);
+        user.setBalance(user.getBalance() + amount);
         System.out.println("Success!");
     }
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
-        double totalAmount = amount * (1 + fromUser.getBank().getCommission(amount) / 100);
+        double totalAmount = amount + fromUser.getBank().getCommission(amount);
 
-        if (fromUser == toUser) {
+        if (fromUser.equals(toUser)) {
             System.out.println("Invalid transfer parameters! Cannot transfer to oneself");
             return;
         }
@@ -52,19 +48,14 @@ public class BankSystemImpl implements BankSystem {
             System.out.println("Transfer error! " + toUser.getName() + ": Funding limit exceeded!");
             return;
         }
-
-        double fromUserNewBalance = fromUser.getBalance() - totalAmount;
-        double toUserNewBalance = toUser.getBalance() + totalAmount;
-
-        fromUser.setBalance(fromUserNewBalance);
-        toUser.setBalance(toUserNewBalance);
+        fromUser.setBalance(fromUser.getBalance() - totalAmount);
+        toUser.setBalance(toUser.getBalance() + totalAmount);
         System.out.println("Success!");
     }
 
     @Override
     public void paySalary(User user) {
-        double userNewBalance = user.getBalance() + user.getSalary();
-        user.setBalance(userNewBalance);
+        user.setBalance(user.getBalance() + user.getSalary());
         System.out.println("Success!");
     }
 }

@@ -23,10 +23,63 @@ public class User {
 
     @Override
     public String toString() {
-        String objectInfo = "ID: " + this.id + "\nName: " + this.name + "\nBalance: " + this.bank.getCurrency()
-                + " " + this.balance + "\nMonths of employment: " + this.monthsOfEmployment + "\nCompany name: "
-                + this.companyName + "\nSalary: " + this.bank.getCurrency() + " " + this.salary;
-        return objectInfo;
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", balance=" + balance +
+                ", monthsOfEmployment=" + monthsOfEmployment +
+                ", companyName='" + companyName + '\'' +
+                ", salary=" + salary +
+                ", bank=" + bank.getClass().getSimpleName()+
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        User user = (User) o;
+
+        if (id != user.id) {
+            return false;
+        }
+        if (Double.compare(user.balance, balance) != 0) {
+            return false;
+        }
+        if (monthsOfEmployment != user.monthsOfEmployment) {
+            return false;
+        }
+        if (salary != user.salary) {
+            return false;
+        }
+        if (!name.equals(user.name)) {
+            return false;
+        }
+        if (!companyName.equals(user.companyName)) {
+            return false;
+        }
+        return bank.equals(user.bank);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = (int) (id ^ (id >>> 32));
+        result = 31 * result + name.hashCode();
+        temp = Double.doubleToLongBits(balance);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + monthsOfEmployment;
+        result = 31 * result + companyName.hashCode();
+        result = 31 * result + salary;
+        result = 31 * result + bank.hashCode();
+        return result;
     }
 
     public long getId() {

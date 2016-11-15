@@ -12,73 +12,54 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getLimitOfWithdrawal() {
-        int limitOfWithdrawal = 0;
-
         switch (super.getCurrency()) {
             case USD:
-                limitOfWithdrawal = 100;
-                break;
+                return 100;
             case EUR:
-                limitOfWithdrawal = 150;
-                break;
+                return 150;
         }
-
-        return limitOfWithdrawal;
+        return 0;
     }
 
     @Override
     public int getLimitOfFunding() {
-        int limitOfFunding = 0;
-
         switch (super.getCurrency()) {
             case USD:
-                limitOfFunding = 10_000;
-                break;
+                return 10000;
             case EUR:
-                limitOfFunding = 5_000;
-                break;
+                return 5000;
         }
-
-        return limitOfFunding;
+        return 0;
     }
 
     @Override
     public int getMonthlyRate() {
-        int monthlyRate = 0;
-
         switch (super.getCurrency()) {
             case USD:
-                monthlyRate = 1;
-                break;
+                return 1;
             case EUR:
-                monthlyRate = 0;
-                break;
+                return 0;
         }
-
-        return monthlyRate;
+        return 0;
     }
 
     @Override
-    public int getCommission(int sum) {
-        int commission = 0;
-
+    public double getCommission(int sum) {
         switch (super.getCurrency()) {
             case USD:
                 if (sum <= 1000) {
-                    commission = 3;
+                    return sum * 0.03;
                 } else {
-                    commission = 5;
+                    return sum * 0.05;
                 }
-                break;
             case EUR:
                 if (sum <= 1000) {
-                    commission = 10;
+                    return sum * 0.1;
                 } else {
-                    commission = 11;
+                    return sum * 0.11;
                 }
-                break;
         }
-        return commission;
+        return 0;
     }
 
     public String getName() {

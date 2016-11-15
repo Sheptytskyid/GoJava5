@@ -27,13 +27,11 @@ public abstract class Bank {
 
     public abstract int getMonthlyRate();
 
-    public abstract int getCommission(int sum);
+    public abstract double getCommission(int sum);
 
     public double moneyPaidMonthlyForSalary() {
         return 1000.0;
     }
-
-    ;
 
     public long getId() {
         return id;
