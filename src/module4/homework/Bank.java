@@ -30,7 +30,7 @@ public abstract class Bank {
     public abstract double getCommission(int sum);
 
     public double moneyPaidMonthlyForSalary() {
-        return 1000.0;
+        return avrSalaryOfEmployee * numberOfEmployees;
     }
 
     public long getId() {

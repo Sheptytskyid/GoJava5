@@ -30,7 +30,7 @@ public class User {
                 ", monthsOfEmployment=" + monthsOfEmployment +
                 ", companyName='" + companyName + '\'' +
                 ", salary=" + salary +
-                ", bank=" + bank.getClass().getSimpleName()+
+                ", bank=" + bank.getClass().getSimpleName() +
                 '}';
     }
 
