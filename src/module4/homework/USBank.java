@@ -27,7 +27,7 @@ public class USBank extends Bank {
     public int getLimitOfFunding() {
         switch (super.getCurrency()) {
             case USD:
-                return 0;
+                return Integer.MAX_VALUE;
             case EUR:
                 return 10000;
         }
