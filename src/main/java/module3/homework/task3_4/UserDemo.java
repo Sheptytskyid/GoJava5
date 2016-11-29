@@ -1,7 +1,5 @@
 package module3.homework.task3_4;
 
-import javax.sql.rowset.serial.SerialJavaObject;
-
 public class UserDemo {
 
     public static void main(String[] args) {

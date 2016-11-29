@@ -1,7 +1,5 @@
 package module4.homework;
 
-import java.util.concurrent.CyclicBarrier;
-
 public class USBank extends Bank {
 
     private String name;

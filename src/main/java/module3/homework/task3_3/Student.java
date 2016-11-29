@@ -1,7 +1,5 @@
 package module3.homework.task3_3;
 
-import java.util.Arrays;
-
 public class Student {
 
     private String firstName;
