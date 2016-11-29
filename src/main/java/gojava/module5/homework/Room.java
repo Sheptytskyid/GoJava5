@@ -21,14 +21,14 @@ public class Room {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null) {
+        if (obj == null) {
             return false;
         }
-        Room room = (Room) o;
+        Room room = (Room) obj;
         if (price != room.price) {
             return false;
         }

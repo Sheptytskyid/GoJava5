@@ -2,11 +2,11 @@ package gojava.module5.practice;
 
 public class Connection {
 
-    private String ULR;
+    private String url;
     private static Connection instance = new Connection("http://google.com/");
 
-    public Connection(String ULR) {
-        this.ULR = ULR;
+    public Connection(String url) {
+        this.url = url;
     }
 
     public static Connection getInstance() {

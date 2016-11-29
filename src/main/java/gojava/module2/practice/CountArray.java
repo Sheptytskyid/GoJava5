@@ -25,13 +25,13 @@ public class CountArray {
         return numberOfTimes;
     }
 
-    static void printNumberOfTimes(int k) {
-        if (k == 0) {
+    static void printNumberOfTimes(int item) {
+        if (item == 0) {
             System.out.println("NO");
-        } else if (k == 1) {
+        } else if (item == 1) {
             System.out.println("YES");
         } else {
-            System.out.println(k);
+            System.out.println(item);
         }
     }
 
