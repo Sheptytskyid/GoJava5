@@ -1,4 +1,4 @@
-package gojava.module3.homework.task3_3;
+package gojava.module3.homework.task3;
 
 public class SpecialStudent extends CollegeStudent {
 

@@ -131,7 +131,6 @@
       <property name="ignoreFinal" value="false"/>
     </module>
     <module name="OverloadMethodsDeclarationOrder"/>
-    <module name="VariableDeclarationUsageDistance"/>
     <module name="MethodParamPad"/>
     <module name="OperatorWrap">
       <property name="option" value="NL"/>

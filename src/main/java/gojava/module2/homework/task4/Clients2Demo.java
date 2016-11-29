@@ -1,4 +1,4 @@
-package gojava.module2.homework.task2_4;
+package gojava.module2.homework.task4;
 
 class Clients2Demo {
 

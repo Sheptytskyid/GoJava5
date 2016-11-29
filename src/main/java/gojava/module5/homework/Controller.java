@@ -1,18 +1,19 @@
 package gojava.module5.homework;
 
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Controller {
 
     private API[] apis = {
-            new BookingComAPI(),
-            new GoogleAPI(),
-            new TripAdvisorAPI()
+        new BookingComAPI(),
+        new GoogleAPI(),
+        new TripAdvisorAPI()
     };
 
-    private List<Room> myRoomsList = new ArrayList(0);
     private DAOImpl dao = new DAOImpl();
-
 
     public List<Room> requestRooms(int price, int persons, String city, String hotel) {
         System.out.println("Requesting room...");

@@ -1,6 +1,7 @@
 package gojava.module5.homework;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DAOImpl implements DAO {
 

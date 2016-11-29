@@ -1,4 +1,4 @@
-package gojava.module2.homework.task2_4;
+package gojava.module2.homework.task4;
 
 class Clients2 {
 
@@ -18,8 +18,8 @@ class Clients2 {
         }
 
 
-        System.out.println(clientName + " " +
-                (clientBalances[clientIndex] += sum));
+        System.out.println(clientName + " "
+                + (clientBalances[clientIndex] += sum));
         System.out.println();
     }
 }

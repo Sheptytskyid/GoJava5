@@ -16,7 +16,7 @@ public class Triangles {
         this.y2Coordinate = y2Coordinate;
         this.x3Coordinate = x3Coordinate;
         this.y3Coordinate = y3Coordinate;
-        if (Double.compare(area(),0) == 0) {
+        if (Double.compare(area(), 0) == 0) {
             System.out.println("points are on the same line");
         }
     }
@@ -43,7 +43,7 @@ public class Triangles {
     }
 
     public void setX1Coordinate(int x1Coordinate) {
-        if (Double.compare(area(),0) !=0) {
+        if (Double.compare(area(), 0) != 0) {
             System.out.println("points are on the same line");
             return;
         }
@@ -55,7 +55,7 @@ public class Triangles {
     }
 
     public void setY1Coordinate(int y1Coordinate) {
-        if (Double.compare(area(),0) !=0) {
+        if (Double.compare(area(), 0) != 0) {
             System.out.println("points are on the same line");
             return;
         }
@@ -67,7 +67,7 @@ public class Triangles {
     }
 
     public void setX2Coordinate(int x2Coordinate) {
-        if (Double.compare(area(),0) !=0) {
+        if (Double.compare(area(), 0) != 0) {
             System.out.println("points are on the same line");
             return;
         }
@@ -79,7 +79,7 @@ public class Triangles {
     }
 
     public void setY2Coordinate(int y2Coordinate) {
-        if (Double.compare(area(),0) !=0) {
+        if (Double.compare(area(), 0) != 0) {
             System.out.println("points are on the same line");
             return;
         }
@@ -91,7 +91,7 @@ public class Triangles {
     }
 
     public void setX3Coordinate(int x3Coordinate) {
-        if (Double.compare(area(),0) !=0) {
+        if (Double.compare(area(), 0) != 0) {
             System.out.println("points are on the same line");
             return;
         }
@@ -103,7 +103,7 @@ public class Triangles {
     }
 
     public void setY3Coordinate(int y3Coordinate) {
-        if (Double.compare(area(),0) !=0) {
+        if (Double.compare(area(), 0) != 0) {
             System.out.println("points are on the same line");
             return;
         }

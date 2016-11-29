@@ -17,8 +17,9 @@ public class USBank extends Bank {
                 return 1000;
             case EUR:
                 return 1200;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -28,8 +29,9 @@ public class USBank extends Bank {
                 return Integer.MAX_VALUE;
             case EUR:
                 return 10000;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -39,8 +41,9 @@ public class USBank extends Bank {
                 return 1;
             case EUR:
                 return 2;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -58,8 +61,9 @@ public class USBank extends Bank {
                 } else {
                     return sum * 0.08;
                 }
+            default:
+                return 0;
         }
-        return 0;
     }
 
     public String getName() {

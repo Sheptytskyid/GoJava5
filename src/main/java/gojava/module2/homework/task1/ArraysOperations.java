@@ -1,4 +1,4 @@
-package gojava.module2.homework.task2_1;
+package gojava.module2.homework.task1;
 
 import java.util.Arrays;
 
@@ -282,7 +282,7 @@ public class ArraysOperations {
      * @param "double[] array"
      * @return second largest element of an array
      */
-    private static double secondLargest(double array[]) {
+    private static double secondLargest(double[] array) {
         double[] sortedArray = Arrays.copyOf(array, array.length);
         Arrays.sort(sortedArray);
         return sortedArray[sortedArray.length - 2];     //return the second largest element in a sorted array

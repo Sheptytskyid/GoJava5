@@ -17,8 +17,9 @@ public class EUBank extends Bank {
                 return 2000;
             case EUR:
                 return 2200;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -28,8 +29,9 @@ public class EUBank extends Bank {
                 return 10000;
             case EUR:
                 return 20000;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -39,8 +41,9 @@ public class EUBank extends Bank {
                 return 0;
             case EUR:
                 return 1;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -58,8 +61,9 @@ public class EUBank extends Bank {
                 } else {
                     return sum * 0.04;
                 }
+            default:
+                return 0;
         }
-        return 0;
     }
 
     public String getName() {

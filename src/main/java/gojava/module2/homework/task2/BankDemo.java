@@ -1,4 +1,4 @@
-package gojava.module2.homework.task2_2;
+package gojava.module2.homework.task2;
 
 /**
  * Class BankDemo is used to test the functionality of the Bank class
@@ -12,8 +12,8 @@ public class BankDemo {
          * withdraw() method of the Bank class
          */
 
-        Bank client1 = new Bank("Client1", 100.0);
-        Bank client2 = new Bank("Client2", 100.0);
+        Bank client1 = new Bank(100.0, "Client1");
+        Bank client2 = new Bank(100.0, "Client2");
 
         client1.withdraw(10.0);
         client2.withdraw(99.0);

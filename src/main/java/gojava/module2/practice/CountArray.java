@@ -15,14 +15,14 @@ public class CountArray {
         System.out.println(Arrays.toString(bubbleSortArray(array)));
     }
 
-    private static int countNumberOfTimes(int n) {
-        int k = 0;
+    private static int countNumberOfTimes(int item) {
+        int numberOfTimes = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == n) {
-                k++;
+            if (array[i] == item) {
+                numberOfTimes++;
             }
         }
-        return k;
+        return numberOfTimes;
     }
 
     static void printNumberOfTimes(int k) {

@@ -1,4 +1,4 @@
-package gojava.module3.homework.task3_1;
+package gojava.module3.homework.task1;
 
 public class Bird {
 

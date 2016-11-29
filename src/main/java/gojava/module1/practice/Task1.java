@@ -12,7 +12,7 @@ public class Task1 {
             }
         }
 
-        String nam[] = new String[counter];
+        String[] nam = new String[counter];
         counter = 0;
 
         for (int i = 0; i < balances.length; i++) {
@@ -21,7 +21,8 @@ public class Task1 {
                 counter++;
             }
         }
-        for (String x : nam)
+        for (String x : nam) {
             System.out.println(x);
+        }
     }
 }

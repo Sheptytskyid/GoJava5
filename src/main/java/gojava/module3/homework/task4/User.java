@@ -1,4 +1,4 @@
-package gojava.module3.homework.task3_4;
+package gojava.module3.homework.task4;
 
 public class User {
 

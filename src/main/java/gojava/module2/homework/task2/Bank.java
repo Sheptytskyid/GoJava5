@@ -1,4 +1,4 @@
-package gojava.module2.homework.task2_2;
+package gojava.module2.homework.task2;
 
 /**
  * The Bank class contains a withdraw() method that withdraws a certain amount of money + 5% fee
@@ -10,9 +10,9 @@ public class Bank {
     private double balance;
     private String clientName;
 
-    public Bank(String n, double b) {
-        clientName = n;
-        balance = b;
+    public Bank(double balance, String clientName) {
+        this.balance = balance;
+        this.clientName = clientName;
     }
 
     /**

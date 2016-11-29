@@ -17,8 +17,9 @@ public class ChinaBank extends Bank {
                 return 100;
             case EUR:
                 return 150;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -28,8 +29,9 @@ public class ChinaBank extends Bank {
                 return 10000;
             case EUR:
                 return 5000;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -39,8 +41,9 @@ public class ChinaBank extends Bank {
                 return 1;
             case EUR:
                 return 0;
+            default:
+                return 0;
         }
-        return 0;
     }
 
     @Override
@@ -58,8 +61,9 @@ public class ChinaBank extends Bank {
                 } else {
                     return sum * 0.11;
                 }
+            default:
+                return 0;
         }
-        return 0;
     }
 
     public String getName() {
