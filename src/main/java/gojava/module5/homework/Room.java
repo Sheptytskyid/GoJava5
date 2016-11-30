@@ -36,7 +36,6 @@ public class Room {
             return false;
         }
         return cityName.equals(room.cityName);
-
     }
 
     @Override

@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         Controller controller = new Controller();
-        List<Room> roomsList = new ArrayList(0);
+        List<Room> roomsList = new ArrayList<>();
 
         roomsList.addAll(controller.requestRooms(1200, 4, "Bukovel", "Marina"));
         roomsList.addAll(controller.requestRooms(1600, 4, "Kyiv", "Mir"));
