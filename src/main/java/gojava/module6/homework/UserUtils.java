@@ -4,38 +4,38 @@ public class UserUtils {
 
     public static User[] uniqueUsers(User[] users) {
         User[] uniqueUsers = new User[users.length];
-        int uniqueUsersIndex = 0;
+        int index = 0;
         boolean isUnique = true;
-        for (User usersElement : users) {
-            for (User uniqueUsersElement : uniqueUsers) {
-                if (usersElement.equals(uniqueUsersElement)) {
+        for (int i = 0; i < users.length; i++) {
+            for (int j = i + 1; j < users.length; j++) {
+                if (users[i].equals(users[j])) {
                     isUnique = false;
+                    break;
                 }
             }
             if (isUnique) {
-                uniqueUsers[uniqueUsersIndex++] = usersElement;
+                uniqueUsers[index++] = users[i];
             }
             isUnique = true;
         }
         return deleteEmptyUsers(uniqueUsers);
     }
 
-    public static User[] usersWithContitionalBalance(User[] users, int balance) {
-        User[] usersWithConditionalBalance = new User[users.length];
-        int usersWithCondBalIndex = 0;
-
-        for (User usersElement : users) {
-            if (usersElement.getBalance() == balance) {
-                usersWithConditionalBalance[usersWithCondBalIndex++] = usersElement;
+    public static User[] usersWithConditionalBalance(User[] users, int balance) {
+        User[] usersWithCondBal = new User[users.length];
+        int index = 0;
+        for (User user : users) {
+            if (user.getBalance() == balance) {
+                usersWithCondBal[index++] = user;
             }
         }
-        return deleteEmptyUsers(usersWithConditionalBalance);
+        return deleteEmptyUsers(usersWithCondBal);
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
         users = uniqueUsers(users);
-        for (User usersElement : users) {
-            usersElement.setBalance(usersElement.getBalance() + usersElement.getSalary());
+        for (User user : users) {
+            user.setBalance(user.getBalance() + user.getSalary());
         }
         return users;
     }
@@ -50,16 +50,16 @@ public class UserUtils {
 
     public static User[] deleteEmptyUsers(User[] users) {
         int counter = 0;
-        for (User usersElement : users) {
-            if (usersElement == null) {
+        for (User user : users) {
+            if (user == null) {
                 counter++;
             }
         }
         User[] nonEmptyUsers = new User[users.length - counter];
         counter = 0;
-        for (User usersElement : users) {
-            if (usersElement != null) {
-                nonEmptyUsers[counter++] = usersElement;
+        for (User user : users) {
+            if (user != null) {
+                nonEmptyUsers[counter++] = user;
             }
         }
         return nonEmptyUsers;

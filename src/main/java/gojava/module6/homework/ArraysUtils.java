@@ -87,27 +87,4 @@ public final class ArraysUtils {
         }
         return arrayOfEvenElements;
     }
-
-    static void arraysOperations(int[] array) {
-        System.out.println("Initial array:\n" + Arrays.toString(array));
-        System.out.println("Reversed initial array:\n" + Arrays.toString(reverse(array)));
-        System.out.println("Even elements:\n" + Arrays.toString(findEvenElements(array)));
-        System.out.println("Max element: " + max(array));
-        System.out.println("Min element: " + min(array));
-        System.out.print("MaxPositive element: ");
-        try {
-            System.out.println(maxPositive(array));
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
-        }
-        System.out.println("Sum of all elements: " + sum(array));
-        System.out.println("Product of all elements: " + multiplication(array));
-        System.out.print("Modulus of the first and the last element: ");
-        try {
-            System.out.println(modulus(array));
-        } catch (ArithmeticException e) {
-            System.out.println("Error: division by zero occurred");
-        }
-        System.out.println("Second largest element: " + secondLargest(array));
-    }
 }
