@@ -7,19 +7,20 @@ import java.util.List;
 
 public class Controller {
 
-    private API[] apis = {
-        new BookingComAPI(),
-        new GoogleAPI(),
-        new TripAdvisorAPI()
-    };
-
+    private List<API> apis = new ArrayList<>();
     private DAOImpl dao = new DAOImpl();
+
+    public Controller() {
+        apis.add(new BookingComAPI());
+        apis.add(new GoogleAPI());
+        apis.add(new TripAdvisorAPI());
+    }
 
     public List<Room> requestRooms(int price, int persons, String city, String hotel) {
         System.out.println("Requesting room...");
         List<Room> listOfRoomsRequested = new ArrayList(0);
         for (API api : apis) {
-            listOfRoomsRequested.addAll(Arrays.asList(api.findRooms(price, persons, city, hotel)));
+            listOfRoomsRequested.addAll(api.findRooms(price, persons, city, hotel));
         }
         System.out.println(listOfRoomsRequested.size()
                             + (listOfRoomsRequested.size() == 1 ? " room " : " rooms ")
@@ -30,7 +31,7 @@ public class Controller {
     public List<Room> check(API api1, API api2) {
         System.out.println("Checking for equal rooms in " + api1.getClass().getSimpleName()
                             + " and " + api2.getClass().getSimpleName());
-        List<Room> listOfEqualRooms = new ArrayList(0);
+        List<Room> listOfEqualRooms = new ArrayList();
         for (Room room1 : api1.getAll()) {
             for (Room room2 : api2.getAll()) {
                 if (room1.equals(room2)) {
@@ -43,19 +44,11 @@ public class Controller {
         return listOfEqualRooms;
     }
 
-    public API[] getApis() {
+    public List<API> getApis() {
         return apis;
-    }
-
-    public void setApis(API[] apis) {
-        this.apis = apis;
     }
 
     public DAOImpl getDao() {
         return dao;
-    }
-
-    public void setDao(DAOImpl dao) {
-        this.dao = dao;
     }
 }

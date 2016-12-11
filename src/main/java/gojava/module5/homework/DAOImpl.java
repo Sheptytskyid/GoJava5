@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DAOImpl implements DAO {
 
-    private List<Room> myRoomsList = new ArrayList(0);
+    private List<Room> myRoomsList = new ArrayList();
 
     @Override
     public Room save(Room room) {

@@ -14,9 +14,9 @@ public class Main {
         roomsList.addAll(controller.requestRooms(950, 3, "Truskavets", "Cristal"));
         System.out.println("\nList of requested rooms:\n" + roomsList + "\n");
 
-        System.out.println(controller.check(controller.getApis()[0], controller.getApis()[1]));
-        System.out.println(controller.check(controller.getApis()[1], controller.getApis()[2]));
-        System.out.println(controller.check(controller.getApis()[0], controller.getApis()[2]));
+        System.out.println(controller.check(controller.getApis().get(0), controller.getApis().get(1)));
+        System.out.println(controller.check(controller.getApis().get(1), controller.getApis().get(2)));
+        System.out.println(controller.check(controller.getApis().get(2), controller.getApis().get(0)));
 
         System.out.println();
         controller.getDao().save(roomsList.get(0));

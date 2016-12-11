@@ -7,7 +7,7 @@ import java.util.UUID;
 public abstract class AbstractAPI implements API {
 
     @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
+    public List<Room> findRooms(int price, int persons, String city, String hotel) {
         List<Room> listOfRoomsFound = new ArrayList<>(0);
         for (Room room : getAll()) {
             if (room.getPrice() == price
@@ -17,11 +17,11 @@ public abstract class AbstractAPI implements API {
                 listOfRoomsFound.add(room);
             }
         }
-        return listOfRoomsFound.toArray(new Room[listOfRoomsFound.size()]);
+        return listOfRoomsFound;
     }
 
     @Override
-    public abstract Room[] getAll();
+    public abstract List<Room> getAll();
 
     public static long getPositiveLongRandomId() {
         long id = UUID.randomUUID().getMostSignificantBits();
