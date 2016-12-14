@@ -1,20 +1,24 @@
-package gojava.module7.homework;
+package gojava.module7.practice;
+
+import gojava.module7.homework.Currency;
+import gojava.module7.homework.Order;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.HashMap;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.NavigableSet;
+import java.util.Set;
 import java.util.TreeSet;
+
 
 public class ListUtils {
 
     public static List<Order> removeDuplicates(List<Order> list) {
-        Set<Order> set = new HashSet<>(list);
+        Set<Order> set = new LinkedHashSet<>(list);
         List<Order> newList = new ArrayList<>(set);
         return newList;
     }
@@ -32,7 +36,7 @@ public class ListUtils {
     }
 
     public static Map<Currency, List<Order>> splitOrdersByCurrencies(List<Order> orders) {
-        Map<Currency, List<Order>> map = new HashMap<>();
+        Map<gojava.module7.homework.Currency, List<Order>> map = new HashMap<>();
         for (Order order : orders) {
             map.merge(order.getCurrency(), new ArrayList<Order>(Arrays.asList(order)), (type, entry) -> {
                 entry = map.get(order.getCurrency());
@@ -66,12 +70,12 @@ public class ListUtils {
     }
 
     public static NavigableSet<Order> removeOrdersGivenCurrency(NavigableSet<Order> orders,
-                                                                Currency currency) {
+                                                                gojava.module7.homework.Currency currency) {
         NavigableSet<Order> newOrdersSet = new TreeSet<>(orders);
         Iterator<Order> iterator = newOrdersSet.iterator();
         while (iterator.hasNext()) {
             Order item = iterator.next();
-            if (item.getCurrency().equals(Currency.USD)) {
+            if (item.getCurrency().equals(gojava.module7.homework.Currency.USD)) {
                 iterator.remove();
             }
         }

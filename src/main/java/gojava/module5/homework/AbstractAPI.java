@@ -8,7 +8,7 @@ public abstract class AbstractAPI implements API {
 
     @Override
     public List<Room> findRooms(int price, int persons, String city, String hotel) {
-        List<Room> listOfRoomsFound = new ArrayList<>(0);
+        List<Room> listOfRoomsFound = new ArrayList<>();
         for (Room room : getAll()) {
             if (room.getPrice() == price
                     && room.getPersons() == persons
@@ -20,8 +20,6 @@ public abstract class AbstractAPI implements API {
         return listOfRoomsFound;
     }
 
-    @Override
-    public abstract List<Room> getAll();
 
     public static long getPositiveLongRandomId() {
         long id = UUID.randomUUID().getMostSignificantBits();

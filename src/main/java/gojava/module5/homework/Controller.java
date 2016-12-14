@@ -18,7 +18,7 @@ public class Controller {
 
     public List<Room> requestRooms(int price, int persons, String city, String hotel) {
         System.out.println("Requesting room...");
-        List<Room> listOfRoomsRequested = new ArrayList(0);
+        List<Room> listOfRoomsRequested = new ArrayList();
         for (API api : apis) {
             listOfRoomsRequested.addAll(api.findRooms(price, persons, city, hotel));
         }
