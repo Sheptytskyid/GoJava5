@@ -46,7 +46,7 @@ public class Task3 {
         System.out.println("Order with the highest price:\n" + orderWthHighestPrice + "\n");
 
         //Delete orders with given Currency
-        ordersSet.removeIf((order) -> order.getCurrency().equals(Currency.USD));
+        ordersSet.removeIf(order -> order.getCurrency().equals(Currency.USD));
         System.out.println("UAH Orders:\n" + ordersSet);
 
     }

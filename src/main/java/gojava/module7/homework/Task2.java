@@ -52,14 +52,12 @@ public class Task2 {
         System.out.println("Sorted by item, shop ID and user city:\n" + ordersList + "\n");
 
         //remove duplicates
-        List<Order> uniqueOrders = ordersList.stream()
-            .distinct()
-            .collect(Collectors.toList());
+        List<Order> uniqueOrders = ordersList.stream().distinct().collect(Collectors.toList());
         System.out.println("Unique orders:\n" + uniqueOrders + "\n");
 
         //remove ordersList with price below 1500
         List<Order> highPriceOrders = ordersList.stream()
-            .filter((order) -> order.getPrice() > 1500)
+            .filter(order -> order.getPrice() > 1500)
             .collect(Collectors.toList());
         System.out.println("Orders with prices above 1500:\n" + highPriceOrders + "\n");
 
@@ -70,7 +68,7 @@ public class Task2 {
 
         //split ordersList by cities
         Map<String, List<Order>> ordersByCities = ordersList.stream()
-            .collect(Collectors.groupingBy((order) -> order.getUser().getCity()));
+            .collect(Collectors.groupingBy(order -> order.getUser().getCity()));
         System.out.println("Orders split by user cities:\n" + ordersByCities + "\n");
     }
 
