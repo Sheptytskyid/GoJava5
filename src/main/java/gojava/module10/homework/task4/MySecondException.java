@@ -9,4 +9,8 @@ public class MySecondException extends Exception {
     public MySecondException() {
         super();
     }
+
+    public MySecondException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

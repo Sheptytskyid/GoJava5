@@ -8,10 +8,7 @@ public class ExceptionTestingUtils {
         try {
             methodG();
         } catch (MyException e) {
-            System.out.println("Caught exception: " + e.getMessage());
-            MySecondException mySecondException =  new MySecondException("My Second Exception");
-            mySecondException.addSuppressed(e);
-            throw mySecondException;
+            throw new MySecondException("My Second Exception", e);
         }
     }
 

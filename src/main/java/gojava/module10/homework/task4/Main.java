@@ -7,10 +7,7 @@ public class Main {
             ExceptionTestingUtils.methodF();
         } catch (MySecondException e) {
             System.out.println("Caught exception: " + e.getMessage());
-            System.out.println("Suppressed exceptions: ");
-            for (Throwable throwable : e.getSuppressed()) {
-                System.out.println(throwable.getMessage());
-            }
+            System.out.println("caused by: " + e.getCause().getMessage());
         }
     }
 
