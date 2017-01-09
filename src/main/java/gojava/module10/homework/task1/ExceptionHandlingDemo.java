@@ -6,7 +6,7 @@ public class ExceptionHandlingDemo {
         try {
             throw new Exception("Testing exception handling");
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         } finally {
             System.out.println("Inside \"finally\"");
         }

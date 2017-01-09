@@ -9,14 +9,4 @@ public class MySecondException extends Exception {
     public MySecondException() {
         super();
     }
-
-    @Override
-    public String getMessage() {
-        return super.getMessage();
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }

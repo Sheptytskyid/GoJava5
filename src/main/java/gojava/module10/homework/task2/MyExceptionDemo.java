@@ -6,7 +6,7 @@ public class MyExceptionDemo {
         try {
             throw new MyException("Testing MyException");
         } catch (MyException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 }

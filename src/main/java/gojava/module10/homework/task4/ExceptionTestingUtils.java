@@ -8,12 +8,14 @@ public class ExceptionTestingUtils {
         try {
             methodG();
         } catch (MyException e) {
-            System.out.println("Caught exception: " + e);
-            throw new MySecondException();
+            System.out.println("Caught exception: " + e.getMessage());
+            MySecondException mySecondException =  new MySecondException("My Second Exception");
+            mySecondException.addSuppressed(e);
+            throw mySecondException;
         }
     }
 
     public static void methodG() throws MyException {
-        throw new MyException();
+        throw new MyException("My Exception");
     }
 }
