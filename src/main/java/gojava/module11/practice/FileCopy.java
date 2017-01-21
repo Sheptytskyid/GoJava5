@@ -11,11 +11,11 @@ public class FileCopy {
     public static void main(String[] args) {
         String string;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("source.txt"))) {
-            writer.write("Марічка");
+            writer.write("111");
             writer.newLine();
-            writer.write("Дениско");
+            writer.write("222");
             writer.newLine();
-            writer.write("Дениско + Марічка");
+            writer.write("222 + 111");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
