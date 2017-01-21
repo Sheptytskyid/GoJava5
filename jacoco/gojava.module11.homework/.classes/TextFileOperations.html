@@ -1,0 +1,201 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TextFileOperations</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gojava.module11.homework</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TextFileOperations (gojava.module11.homework)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TextFileOperations</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 61)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gojava.module11.homework;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.io.BufferedReader;
+<i>4</i>&nbsp;import java.io.BufferedWriter;
+<i>5</i>&nbsp;import java.io.File;
+<i>6</i>&nbsp;import java.io.FileReader;
+<i>7</i>&nbsp;import java.io.FileWriter;
+<i>8</i>&nbsp;import java.io.IOException;
+<i>9</i>&nbsp;import java.io.PrintWriter;
+<i>10</i>&nbsp;import java.util.Map;
+<i>11</i>&nbsp;import java.util.stream.Collectors;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;public class TextFileOperations {
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    private static TextFileOperations fileWithSampleText;
+<i>16</i>&nbsp;    private File textFile;
+<i>17</i>&nbsp;
+<b class="nc"><i>18</i>&nbsp;    private TextFileOperations() throws IOException {</b>
+<b class="nc"><i>19</i>&nbsp;        makeEmptyTextFile(&quot;Source.txt&quot;);</b>
+<b class="nc"><i>20</i>&nbsp;        fillFileWithSampleText();</b>
+<b class="nc"><i>21</i>&nbsp;    }</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    public static synchronized TextFileOperations getInstance() throws IOException {
+<b class="nc"><i>24</i>&nbsp;        if (fileWithSampleText == null) {</b>
+<b class="nc"><i>25</i>&nbsp;            fileWithSampleText = new TextFileOperations();</b>
+<i>26</i>&nbsp;        }
+<b class="nc"><i>27</i>&nbsp;        return fileWithSampleText;</b>
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    private void makeEmptyTextFile(String fileName) throws IOException {
+<b class="nc"><i>31</i>&nbsp;        textFile = new File(fileName);</b>
+<i>32</i>&nbsp;        try {
+<b class="nc"><i>33</i>&nbsp;            if (!textFile.createNewFile()) {</b>
+<b class="nc"><i>34</i>&nbsp;                new PrintWriter(fileName).close();</b>
+<i>35</i>&nbsp;            }
+<b class="nc"><i>36</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>37</i>&nbsp;            System.out.println(&quot;Error creating file!&quot;);</b>
+<b class="nc"><i>38</i>&nbsp;            throw e;</b>
+<b class="nc"><i>39</i>&nbsp;        }</b>
+<b class="nc"><i>40</i>&nbsp;    }</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    private void fillFileWithSampleText() throws IOException {
+<b class="nc"><i>43</i>&nbsp;        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(textFile))) {</b>
+<b class="nc"><i>44</i>&nbsp;            fileWriter.println(&quot;This is the initial text line 1&quot;);</b>
+<b class="nc"><i>45</i>&nbsp;            fileWriter.println(&quot;This is the initial text line 2&quot;);</b>
+<b class="nc"><i>46</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>47</i>&nbsp;            System.out.println(&quot;Error initialising file!&quot;);</b>
+<b class="nc"><i>48</i>&nbsp;            throw e;</b>
+<b class="nc"><i>49</i>&nbsp;        }</b>
+<b class="nc"><i>50</i>&nbsp;    }</b>
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    public File fileContentsReplacer(Map&lt;String, String&gt; wordsToReplace) throws IOException {
+<b class="nc"><i>53</i>&nbsp;        String outputString = replacer(wordsToReplace);</b>
+<b class="nc"><i>54</i>&nbsp;        return writeContentsToFile(outputString, false);</b>
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    public File fileContentsMerge(Map&lt;String, String&gt; wordsToReplace) throws IOException {
+<b class="nc"><i>59</i>&nbsp;        String outputString = replacer(wordsToReplace);</b>
+<b class="nc"><i>60</i>&nbsp;        return writeContentsToFile(outputString, true);</b>
+<i>61</i>&nbsp;    }
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    public String readFileContentsToString() throws IOException {
+<b class="nc"><i>64</i>&nbsp;        StringBuilder outputString = new StringBuilder();</b>
+<b class="nc"><i>65</i>&nbsp;        try (BufferedReader bufferedFileReader = new BufferedReader(new FileReader(textFile))) {</b>
+<b class="nc"><i>66</i>&nbsp;            outputString.append(bufferedFileReader.lines().collect(Collectors.joining(System.lineSeparator())));</b>
+<b class="nc"><i>67</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>68</i>&nbsp;            System.out.println(&quot;Error reading file!&quot;);</b>
+<b class="nc"><i>69</i>&nbsp;            throw e;</b>
+<b class="nc"><i>70</i>&nbsp;        }</b>
+<b class="nc"><i>71</i>&nbsp;        return outputString.toString();</b>
+<i>72</i>&nbsp;    }
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;    public String replacer(Map&lt;String, String&gt; wordsToReplace) throws IOException {
+<b class="nc"><i>75</i>&nbsp;        String outputString = readFileContentsToString();</b>
+<b class="nc"><i>76</i>&nbsp;        for (Map.Entry&lt;String, String&gt; entry : wordsToReplace.entrySet()) {</b>
+<b class="nc"><i>77</i>&nbsp;            outputString = outputString.replaceAll(entry.getKey(), entry.getValue());</b>
+<b class="nc"><i>78</i>&nbsp;        }</b>
+<b class="nc"><i>79</i>&nbsp;        return outputString;</b>
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;    public File writeContentsToFile(String contents, boolean append) throws IOException {
+<b class="nc"><i>83</i>&nbsp;        try (BufferedWriter bufferedFileWriter = new BufferedWriter(new FileWriter(textFile, append))) {</b>
+<b class="nc"><i>84</i>&nbsp;            bufferedFileWriter.write(contents);</b>
+<b class="nc"><i>85</i>&nbsp;            bufferedFileWriter.newLine();</b>
+<b class="nc"><i>86</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>87</i>&nbsp;            System.out.println(&quot;Error writing to file&quot;);</b>
+<b class="nc"><i>88</i>&nbsp;            throw e;</b>
+<b class="nc"><i>89</i>&nbsp;        }</b>
+<b class="nc"><i>90</i>&nbsp;        return textFile;</b>
+<i>91</i>&nbsp;    }
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;    public int checkWord(String word) throws IOException {
+<b class="nc"><i>94</i>&nbsp;        return readFileContentsToString().split(word).length - 1;</b>
+<i>95</i>&nbsp;    }
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;
+<i>98</i>&nbsp;    public String readFileContentsToStringJava6() throws IOException {
+<b class="nc"><i>99</i>&nbsp;        StringBuilder outputString = new StringBuilder();</b>
+<i>100</i>&nbsp;        String textLine;
+<b class="nc"><i>101</i>&nbsp;        BufferedReader bufferedFileReader = null;</b>
+<i>102</i>&nbsp;        try {
+<b class="nc"><i>103</i>&nbsp;            bufferedFileReader = new BufferedReader(new FileReader(textFile));</b>
+<b class="nc"><i>104</i>&nbsp;            while ((textLine = bufferedFileReader.readLine()) != null) {</b>
+<b class="nc"><i>105</i>&nbsp;                outputString.append(textLine);</b>
+<b class="nc"><i>106</i>&nbsp;                outputString.append(System.lineSeparator());</b>
+<i>107</i>&nbsp;            }
+<b class="nc"><i>108</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>109</i>&nbsp;            System.out.println(&quot;Error reading file!&quot;);</b>
+<b class="nc"><i>110</i>&nbsp;            throw e;</b>
+<i>111</i>&nbsp;        } finally {
+<b class="nc"><i>112</i>&nbsp;            if (bufferedFileReader != null) {</b>
+<b class="nc"><i>113</i>&nbsp;                bufferedFileReader.close();</b>
+<i>114</i>&nbsp;            }
+<i>115</i>&nbsp;        }
+<b class="nc"><i>116</i>&nbsp;        return outputString.toString();</b>
+<i>117</i>&nbsp;    }
+<i>118</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-01-21 21:02</div>
+</div>
+</body>
+</html>

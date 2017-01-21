@@ -1,0 +1,165 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Task2</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gojava.module7.homework</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Task2 (gojava.module7.homework)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Task2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 50)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gojava.module7.homework;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;import java.util.Comparator;
+<i>5</i>&nbsp;import java.util.List;
+<i>6</i>&nbsp;import java.util.Map;
+<i>7</i>&nbsp;import java.util.UUID;
+<i>8</i>&nbsp;import java.util.stream.Collectors;
+<i>9</i>&nbsp;
+<b class="nc"><i>10</i>&nbsp;public class Task2 {</b>
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>13</i>&nbsp;        List&lt;User&gt; users = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>14</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Denys&quot;, &quot;Sheptytskyi&quot;, &quot;Kyiv&quot;, 1000));</b>
+<b class="nc"><i>15</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Roman&quot;, &quot;Syroyizhka&quot;, &quot;Lviv&quot;, 1100));</b>
+<b class="nc"><i>16</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Vasyl&quot;, &quot;Kozak&quot;, &quot;Ternopil&quot;, 1200));</b>
+<b class="nc"><i>17</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Orest&quot;, &quot;Melnyk&quot;, &quot;Kyiv&quot;, 1300));</b>
+<b class="nc"><i>18</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Dmytro&quot;, &quot;Kozak&quot;, &quot;Lviv&quot;, 1400));</b>
+<b class="nc"><i>19</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Petro&quot;, &quot;Fedus&quot;, &quot;Ternopil&quot;, 1500));</b>
+<b class="nc"><i>20</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Ivan&quot;, &quot;Fedus&quot;, &quot;Kyiv&quot;, 1600));</b>
+<b class="nc"><i>21</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Roman&quot;, &quot;Kulish&quot;, &quot;Lviv&quot;, 1700));</b>
+<b class="nc"><i>22</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Sergii&quot;, &quot;Kryvonis&quot;, &quot;Ternopil&quot;, 1800));</b>
+<b class="nc"><i>23</i>&nbsp;        users.add(new User(getPositiveRandId(), &quot;Roman&quot;, &quot;Demchuk&quot;, &quot;Kyiv&quot;, 1900));</b>
+<i>24</i>&nbsp;
+<b class="nc"><i>25</i>&nbsp;        List&lt;Order&gt; ordersList = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>26</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1000, Currency.UAH, &quot;Pen&quot;, &quot;Office Supplies&quot;, users.get(0)));</b>
+<b class="nc"><i>27</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1500, Currency.USD, &quot;Ruler&quot;, &quot;Office Supplies&quot;, users.get(1)));</b>
+<b class="nc"><i>28</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1000, Currency.UAH, &quot;Pencil&quot;, &quot;Office Supplies&quot;, users.get(2)));</b>
+<b class="nc"><i>29</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1000, Currency.USD, &quot;Notebook&quot;, &quot;Office Supplies&quot;, users.get(3)));</b>
+<b class="nc"><i>30</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1000, Currency.UAH, &quot;Ball&quot;, &quot;Sport Store&quot;, users.get(4)));</b>
+<b class="nc"><i>31</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1800, Currency.USD, &quot;Snowboard&quot;, &quot;Sport Store&quot;, users.get(5)));</b>
+<b class="nc"><i>32</i>&nbsp;        ordersList.add(new Order(Integer.MAX_VALUE, 1200, Currency.UAH, &quot;Skis&quot;, &quot;Sport Store&quot;, users.get(6)));</b>
+<b class="nc"><i>33</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1700, Currency.UAH, &quot;Pen&quot;, &quot;Office Supplies&quot;, users.get(7)));</b>
+<b class="nc"><i>34</i>&nbsp;        ordersList.add(new Order(getPositiveRandId(), 1700, Currency.USD, &quot;Pencil&quot;, &quot;Office Supplies&quot;, users.get(8)));</b>
+<b class="nc"><i>35</i>&nbsp;        ordersList.add(new Order(Integer.MAX_VALUE, 1200, Currency.UAH, &quot;Skis&quot;, &quot;Sport Store&quot;, users.get(6)));</b>
+<i>36</i>&nbsp;
+<b class="nc"><i>37</i>&nbsp;        System.out.println(&quot;Initial list:\n&quot; + ordersList + &quot;\n&quot;);</b>
+<i>38</i>&nbsp;        //reversed sorting by order prices
+<b class="nc"><i>39</i>&nbsp;        ordersList.sort(Comparator.comparing(Order::getPrice).reversed());</b>
+<b class="nc"><i>40</i>&nbsp;        System.out.println(&quot;Sorted by prices in descending order:\n&quot; + ordersList + &quot;\n&quot;);</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;        //sorting by order prices and by user cities
+<b class="nc"><i>43</i>&nbsp;        ordersList.sort(Comparator.comparing(Order::getPrice)</b>
+<b class="nc"><i>44</i>&nbsp;            .thenComparing((order1, order2) -&gt; order1.getUser().getCity().compareTo(order2.getUser().getCity())));</b>
+<b class="nc"><i>45</i>&nbsp;        System.out.println(&quot;Sorted by prices and user cities:\n&quot; + ordersList + &quot;\n&quot;);</b>
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;        //sorting by Order itemName AND ShopIdentificator AND User city
+<b class="nc"><i>48</i>&nbsp;        ordersList.sort(Comparator.comparing(Order::getItemName)</b>
+<b class="nc"><i>49</i>&nbsp;            .thenComparing(Order::getShopIdentificator)</b>
+<b class="nc"><i>50</i>&nbsp;            .thenComparing((order1, order2) -&gt; order1.getUser().getCity().compareTo(order2.getUser().getCity()))</b>
+<i>51</i>&nbsp;        );
+<b class="nc"><i>52</i>&nbsp;        System.out.println(&quot;Sorted by item, shop ID and user city:\n&quot; + ordersList + &quot;\n&quot;);</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;        //remove duplicates
+<b class="nc"><i>55</i>&nbsp;        List&lt;Order&gt; uniqueOrders = ordersList.stream().distinct().collect(Collectors.toList());</b>
+<b class="nc"><i>56</i>&nbsp;        System.out.println(&quot;Unique orders:\n&quot; + uniqueOrders + &quot;\n&quot;);</b>
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;        //remove ordersList with price below 1500
+<b class="nc"><i>59</i>&nbsp;        List&lt;Order&gt; highPriceOrders = ordersList.stream()</b>
+<b class="nc"><i>60</i>&nbsp;            .filter(order -&gt; order.getPrice() &gt; 1500)</b>
+<b class="nc"><i>61</i>&nbsp;            .collect(Collectors.toList());</b>
+<b class="nc"><i>62</i>&nbsp;        System.out.println(&quot;Orders with prices above 1500:\n&quot; + highPriceOrders + &quot;\n&quot;);</b>
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;        //split ordersList by currencies
+<b class="nc"><i>65</i>&nbsp;        Map&lt;Currency, List&lt;Order&gt;&gt; ordersByCurrencies = ordersList.stream()</b>
+<b class="nc"><i>66</i>&nbsp;            .collect(Collectors.groupingBy(Order::getCurrency));</b>
+<b class="nc"><i>67</i>&nbsp;        System.out.println(&quot;Orders split by currencies:\n&quot; + ordersByCurrencies + &quot;\n&quot;);</b>
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;        //split ordersList by cities
+<b class="nc"><i>70</i>&nbsp;        Map&lt;String, List&lt;Order&gt;&gt; ordersByCities = ordersList.stream()</b>
+<b class="nc"><i>71</i>&nbsp;            .collect(Collectors.groupingBy(order -&gt; order.getUser().getCity()));</b>
+<b class="nc"><i>72</i>&nbsp;        System.out.println(&quot;Orders split by user cities:\n&quot; + ordersByCities + &quot;\n&quot;);</b>
+<b class="nc"><i>73</i>&nbsp;    }</b>
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    public static long getPositiveRandId() {
+<b class="nc"><i>76</i>&nbsp;        long id = UUID.randomUUID().getMostSignificantBits();</b>
+<b class="nc"><i>77</i>&nbsp;        if (id &lt; 0) {</b>
+<b class="nc"><i>78</i>&nbsp;            id = getPositiveRandId();</b>
+<i>79</i>&nbsp;        }
+<b class="nc"><i>80</i>&nbsp;        return id;</b>
+<i>81</i>&nbsp;    }
+<i>82</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-01-21 21:02</div>
+</div>
+</body>
+</html>
