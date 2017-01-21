@@ -13,4 +13,4 @@ script:
   - mvn clean test
 
 after_success:
-  -sbt coveralls
+  -mvn coveralls
