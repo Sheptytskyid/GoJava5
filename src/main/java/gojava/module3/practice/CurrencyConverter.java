@@ -8,9 +8,9 @@ public class CurrencyConverter {
         this.rate = rate;
     }
 
-    double convert(double sumInUAH) {
-        double sumInUSD = sumInUAH / rate;
-        return sumInUSD;
+    double convert(double sumInUah) {
+        double sumInUsd = sumInUah / rate;
+        return sumInUsd;
     }
 
     public double getRate() {

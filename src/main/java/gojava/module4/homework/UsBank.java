@@ -1,10 +1,10 @@
 package gojava.module4.homework;
 
-public class USBank extends Bank {
+public class UsBank extends Bank {
 
     private String name;
 
-    public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee,
+    public UsBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee,
                   long rating, long totalCapital, String name) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
         this.name = name;

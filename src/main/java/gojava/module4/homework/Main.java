@@ -7,9 +7,9 @@ public class Main {
     public static void main(String[] args) {
         ChinaBank chinBan = new ChinaBank(getPositiveLongRandomId(), "China", Currency.USD,
                                             1000, 112, 5, 500000, "ChinBan");
-        EUBank raiffeisenBank = new EUBank(getPositiveLongRandomId(), "Austria", Currency.EUR,
+        EuBank raiffeisenBank = new EuBank(getPositiveLongRandomId(), "Austria", Currency.EUR,
                                             800, 115, 4, 400000, "Raiffeisen Bank");
-        USBank bankOfAmerica = new USBank(getPositiveLongRandomId(), "US", Currency.USD,
+        UsBank bankOfAmerica = new UsBank(getPositiveLongRandomId(), "US", Currency.USD,
                                             600, 119, 3, 300000, "Bank Of America");
 
         User[] users = new User[6];

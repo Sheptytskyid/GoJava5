@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingComAPI extends AbstractAPI {
+public class BookingComApi extends AbstractApi {
 
     private List<Room> rooms = new ArrayList<>();
 
-    public BookingComAPI() {
+    public BookingComApi() {
         rooms.add(new Room(getPositiveLongRandomId(), 800, 2, LocalDate.now(), "Heart o' The City", "Mega City"));
         rooms.add(new Room(getPositiveLongRandomId(), 900, 3, LocalDate.of(2000, 1, 3), "Skilandhouse", "Bukovel"));
         rooms.add(new Room(getPositiveLongRandomId(), 1000, 3, LocalDate.of(2001, 2, 3), "SkiXata", "Bukovel"));

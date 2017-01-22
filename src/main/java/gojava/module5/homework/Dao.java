@@ -2,7 +2,7 @@ package gojava.module5.homework;
 
 import java.util.List;
 
-public interface DAO {
+public interface Dao {
 
     Room save(Room room);
 

@@ -4,11 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class AbstractAPITest {
+public class AbstractApiTest {
 
     @Test
     public void idIsGenerated() {
-        assertTrue(AbstractAPI.getPositiveLongRandomId() > 0);
+        assertTrue(AbstractApi.getPositiveLongRandomId() > 0);
     }
 
 }

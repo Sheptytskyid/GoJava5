@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TripAdvisorAPI extends AbstractAPI {
+public class TripAdvisorApi extends AbstractApi {
 
     private List<Room> rooms = new ArrayList<>();
 
-    public TripAdvisorAPI() {
+    public TripAdvisorApi() {
         rooms.add(new Room(getPositiveLongRandomId(), 850, 2, LocalDate.of(2001, 11, 1), "Rubin", "Truskavets"));
         rooms.add(new Room(getPositiveLongRandomId(), 950, 3, LocalDate.of(2001, 11, 3), "Cristal", "Truskavets"));
         rooms.add(new Room(getPositiveLongRandomId(), 1400, 3, LocalDate.of(2001, 11, 14), "Ibis", "Kyiv"));

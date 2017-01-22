@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public abstract class AbstractAPI implements API {
+public abstract class AbstractApi implements Api {
 
     @Override
     public List<Room> findRooms(int price, int persons, String city, String hotel) {

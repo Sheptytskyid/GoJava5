@@ -3,7 +3,7 @@ package gojava.module5.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOImpl implements DAO {
+public class DaoImpl implements Dao {
 
     private List<Room> myRoomsList = new ArrayList();
 

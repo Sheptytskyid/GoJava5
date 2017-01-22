@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoogleAPI extends AbstractAPI {
+public class GoogleApi extends AbstractApi {
 
     private List<Room> rooms = new ArrayList<>();
 
-    public GoogleAPI() {
+    public GoogleApi() {
         rooms.add(new Room(getPositiveLongRandomId(), 850, 2, LocalDate.of(2001, 11, 1), "Rubin", "Truskavets"));
         rooms.add(new Room(getPositiveLongRandomId(), 950, 3, LocalDate.of(2002, 11, 3), "Cristal", "Truskavets"));
         rooms.add(new Room(getPositiveLongRandomId(), 1000, 3, LocalDate.of(2001, 11, 4), "SkiXata", "Bukovel"));
