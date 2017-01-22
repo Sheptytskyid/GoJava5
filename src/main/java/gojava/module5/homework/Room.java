@@ -1,17 +1,17 @@
 package gojava.module5.homework;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Room {
 
     private long id;
     private int price;
     private int persons;
-    private Date dateAvailableFrom;
+    private LocalDate dateAvailableFrom;
     private String hotelName;
     private String cityName;
 
-    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
+    public Room(long id, int price, int persons, LocalDate dateAvailableFrom, String hotelName, String cityName) {
         this.id = id;
         this.price = price;
         this.persons = persons;
@@ -82,11 +82,11 @@ public class Room {
         this.persons = persons;
     }
 
-    public Date getDateAvailableFrom() {
+    public LocalDate getDateAvailableFrom() {
         return dateAvailableFrom;
     }
 
-    public void setDateAvailableFrom(Date dateAvailableFrom) {
+    public void setDateAvailableFrom(LocalDate dateAvailableFrom) {
         this.dateAvailableFrom = dateAvailableFrom;
     }
 
