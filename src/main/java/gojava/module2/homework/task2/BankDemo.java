@@ -1,10 +1,5 @@
 package gojava.module2.homework.task2;
 
-/**
- * Class BankDemo is used to test the functionality of the Bank class
- *
- * @author Denys Sheptytskyi
- */
 public class BankDemo {
     public static void main(String[] args) {
         /*

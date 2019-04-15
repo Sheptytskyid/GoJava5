@@ -1,6 +1,6 @@
+
 package gojava.module7.practice;
 
-import java.util.Comparator;
 
 public class User /*implements Comparable<User>*/ {
 

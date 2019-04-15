@@ -13,8 +13,10 @@ public class RandomArray {
         for (int i = 0; i < randomArray.length; i++) {
             randomArray[i] = getRandomInt(lowerBound, upperBound);
         }
+        Math.random();
         System.out.println(Arrays.toString(randomArray));
     }
+
 
     private static int getRandomInt(int lowerBound, int upperBound) {
         Random rand = new Random();

@@ -47,7 +47,7 @@ public class Task2 {
         //sorting by Order itemName AND ShopIdentificator AND User city
         ordersList.sort(Comparator.comparing(Order::getItemName)
             .thenComparing(Order::getShopIdentificator)
-            .thenComparing((order1, order2) -> order1.getUser().getCity().compareTo(order2.getUser().getCity()))
+            .thenComparing(Comparator.comparing(order -> order.getUser().getCity()))
         );
         System.out.println("Sorted by item, shop ID and user city:\n" + ordersList + "\n");
 
