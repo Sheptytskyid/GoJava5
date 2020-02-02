@@ -41,13 +41,13 @@ public class Task2 {
 
         //sorting by order prices and by user cities
         ordersList.sort(Comparator.comparing(Order::getPrice)
-            .thenComparing((order1, order2) -> order1.getUser().getCity().compareTo(order2.getUser().getCity())));
+            .thenComparing(order -> order.getUser().getCity()));
         System.out.println("Sorted by prices and user cities:\n" + ordersList + "\n");
 
         //sorting by Order itemName AND ShopIdentificator AND User city
         ordersList.sort(Comparator.comparing(Order::getItemName)
             .thenComparing(Order::getShopIdentificator)
-            .thenComparing(Comparator.comparing(order -> order.getUser().getCity()))
+            .thenComparing(order -> order.getUser().getCity())
         );
         System.out.println("Sorted by item, shop ID and user city:\n" + ordersList + "\n");
 
